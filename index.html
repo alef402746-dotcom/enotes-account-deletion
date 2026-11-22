@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://*.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="description" content="Securely request deletion of your eNotes by McRoyy account and associated data.">
+  <title>Delete your account · eNotes by McRoyy</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="masthead"><a href="#main" class="brand"><span class="brand-mark" aria-hidden="true">e</span> eNotes <span>by McRoyy</span></a><span class="eyebrow">ACCOUNT &amp; PRIVACY</span></header>
+  <main id="main">
+    <section class="intro"><p class="eyebrow">YOUR ACCOUNT. YOUR CHOICE.</p><h1>A clear way<br>to say goodbye.</h1><p class="lead">Delete your eNotes account and associated data securely. You can do this here, even if you have uninstalled the app.</p><a href="#access-help" class="quiet-link">Can’t access your account? ↓</a></section>
+    <div class="layout">
+      <section class="card action-card" aria-labelledby="action-title">
+        <div class="step"><span>01</span><p>VERIFY YOUR ACCOUNT</p></div>
+        <h2 id="action-title">Let’s make sure it’s you.</h2>
+        <p>Use the same Google account or email and password you use in eNotes. We never ask for access to your Gmail inbox.</p>
+        <p id="configuration" class="notice" hidden>This page is awaiting secure connection settings. Sign-in and deletion are unavailable until configuration is complete.</p>
+        <div id="signed-out">
+          <button id="google" class="button primary" type="button" disabled>Continue with Google <span aria-hidden="true">↗</span></button>
+          <div class="divider"><span>or use email</span></div>
+          <form id="login" novalidate>
+            <label for="email">Email address</label><input id="email" type="email" autocomplete="username" required maxlength="254" placeholder="Your eNotes email">
+            <label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required>
+            <button id="email-signin" class="button secondary" type="submit" disabled>Sign in securely</button>
+          </form>
+        </div>
+        <div id="signed-in" hidden>
+          <p class="eyebrow">SIGNED IN AS</p><p id="identity" class="identity"></p>
+          <button id="switch" class="text-button" type="button">Use another account</button>
+          <div class="confirmation">
+            <h3>Delete this eNotes account?</h3><p>This is permanent. Export any study work you want to keep from the app first. Unsynced work and downloaded files on other devices cannot be remotely erased.</p>
+            <label class="check"><input id="acknowledge" type="checkbox"> <span>I have read what is deleted and what may remain.</span></label>
+            <label for="confirmation">Type DELETE to confirm</label><input id="confirmation" autocomplete="off" spellcheck="false" maxlength="6">
+            <button id="delete" class="button danger" type="button" disabled>Delete my account permanently</button>
+          </div>
+        </div>
+        <div id="completed" hidden><span class="success-mark" aria-hidden="true">✓</span><h2>Your account has been deleted.</h2><p>Your active eNotes account data was removed and your contributions were scrubbed. Reply placeholders, backup copies and security logs may remain as explained on this page. Your Google account is unaffected.</p></div>
+        <p id="status" role="status" aria-live="polite" tabindex="-1"></p>
+        <p class="small">Only the verified account shown here can be deleted. Signing in or opening this page does not delete anything.</p>
+      </section>
+      <aside class="details" aria-label="What happens to your data">
+        <section><div class="step"><span>02</span><p>KNOW WHAT HAPPENS</p></div><h2>Your data, explained.</h2><h3>Removed from the active database</h3><ul><li>Your account, profile, school details and avatar</li><li>Synced bookmarks, progress, recall cards and annotations</li><li>Your follows, votes, online presence and study-room membership</li><li>Messages sent by you and direct messages addressed to you</li><li>Your community text, images and author identity</li><li>Account-linked AI usage counters</li></ul></section>
+        <section><h3>What may remain</h3><ul><li>Deleted placeholders, thread timestamps and classmates’ replies</li><li>Other students’ messages and shared study circles</li><li>Copies, quotations or exports held by other people</li><li>Backups and security logs until their applicable retention periods expire</li><li>External providers’ records under their own retention policies</li></ul><p class="small">Exact backup and log retention periods are still being verified. We do not promise immediate erasure of every historical copy. Deleting eNotes does not delete your Google account.</p></section>
+      </aside>
+    </div>
+    <section id="access-help" class="support card"><div><p class="eyebrow">NEED A HAND?</p><h2>Can’t sign in?</h2><p>Recover access through your sign-in provider, or contact account support. We will verify ownership before taking action. An email request alone never automatically deletes an account.</p></div><div><a id="support" class="button secondary" hidden>Contact account support</a><p id="support-pending" class="small">The official support contact is pending configuration. No request is submitted by this page.</p><p class="small">Never send passwords, verification codes or access tokens.</p></div></section>
+  </main>
+  <footer>eNotes by McRoyy <span>Learn freely. Stay in control.</span></footer>
+  <noscript><p class="notice">JavaScript is required for secure account verification. You can also delete your account in the eNotes app.</p></noscript>
+</body></html>
